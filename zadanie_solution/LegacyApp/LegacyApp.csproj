@@ -4,4 +4,28 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Clients\" />
+    <None Remove="Services\" />
+    <None Remove="Models\" />
+    <None Remove="Models\Clients\" />
+    <None Remove="Services\Users\" />
+    <None Remove="Validation\" />
+    <None Remove="Validation\Users\" />
+    <None Remove="Extensions\" />
+    <None Remove="Extensions\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Clients\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\Clients\" />
+    <Folder Include="Services\Users\" />
+    <Folder Include="Validation\" />
+    <Folder Include="Validation\Users\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Extensions\Users\" />
+  </ItemGroup>
 </Project>

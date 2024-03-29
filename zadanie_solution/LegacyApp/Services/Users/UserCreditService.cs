@@ -2,22 +2,20 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace LegacyApp
+namespace LegacyApp.Services.Users
 {
-    public class UserCreditService : IDisposable
+    internal class UserCreditService : IUserCreditService
     {
         /// <summary>
         /// Simulating database
         /// </summary>
-        private readonly Dictionary<string, int> _database =
-            new Dictionary<string, int>()
-            {
-                {"Kowalski", 200},
-                {"Malewski", 20000},
-                {"Smith", 10000},
-                {"Doe", 3000},
-                {"Kwiatkowski", 1000}
-            };
+        private readonly Dictionary<string, int> _database = new () {
+            {"Kowalski", 200},
+            {"Malewski", 20000},
+            {"Smith", 10000},
+            {"Doe", 3000},
+            {"Kwiatkowski", 1000}
+        };
         
         public void Dispose()
         {
@@ -28,7 +26,7 @@ namespace LegacyApp
         /// This method is simulating contact with remote service which is used to get info about someone's credit limit
         /// </summary>
         /// <returns>Client's credit limit</returns>
-        internal int GetCreditLimit(string lastName, DateTime dateOfBirth)
+        public int GetCreditLimit(string lastName)
         {
             int randomWaitingTime = new Random().Next(3000);
             Thread.Sleep(randomWaitingTime);
